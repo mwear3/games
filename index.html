@@ -1,0 +1,30 @@
+<script type="text/javascript">
+    var resizeOwnEmulator = function (width, height)
+    {
+        window.location.hash = '#entry-title';
+        /*document.getElementById('emulator').style.width = '' + width + '';*/
+        document.getElementById('emulator').style.height = '' + height + '';
+    }
+    $(function ()
+    {
+        function embed()
+        {
+            var emulator = document.getElementById('emulator');
+            if (emulator)
+            {
+                var flashvars =
+                        {
+                            system: 'sega',
+                            url: 'https://github.com/mwear3/games/blob/master/sonic3dblast.zip?raw=true'
+                        };
+                var params = {};
+                var attributes = {};
+                params.allowscriptaccess = 'sameDomain';
+                params.allowFullScreen = 'true';
+                params.allowFullScreenInteractive = 'true';
+                swfobject.embedSWF('https://github.com/mwear3/games/blob/master/Nesbox.swf?raw=true', 'emulator', '512', '448', '11.2.0', 'flash/expressInstall.swf', flashvars, params, attributes);
+            }
+        }
+        embed();
+    });
+</script>
